@@ -1,7 +1,6 @@
 const express = require('express');
-const { format } = require('morgan');
 const morgan = require('morgan');
-~morgan.token('body', function (req, res) {
+morgan.token('body', function (req, res) {
   return JSON.stringify(req.body);
 });
 
@@ -92,4 +91,4 @@ app.get('/info', (req, res) => {
   ${Date(Date.now()).toString()}`);
 });
 
-app.listen(3001 || process.env.PORT);
+app.listen(process.env.PORT || 3001);
