@@ -1,0 +1,31 @@
+{
+  "name": "puhelinluettelo-backend",
+  "version": "1.0.0",
+  "description": "Fullstack Open exercise",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:ui": "rm -rf build && cd ../../osa2/puhelinluettelo && npm run build --prod && cp -r build ../../osa3/puhelinluettelo-backend",
+    "deploy": "git push heroku main",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push && npm run deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snottis/fullstackopen-puhelinluettelo-backend.git"
+  },
+  "author": "Sauli Nevalainen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/snottis/fullstackopen-puhelinluettelo-backend/issues"
+  },
+  "homepage": "https://github.com/snottis/fullstackopen-puhelinluettelo-backend#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
